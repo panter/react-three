@@ -59,79 +59,79 @@ module.exports =
 
 	var _THREERenderer2 = _interopRequireDefault(_THREERenderer);
 
-	var _THREEScene = __webpack_require__(92);
+	var _THREEScene = __webpack_require__(97);
 
 	var _THREEScene2 = _interopRequireDefault(_THREEScene);
 
-	var _THREEPerspectiveCamera = __webpack_require__(102);
+	var _THREEPerspectiveCamera = __webpack_require__(107);
 
 	var _THREEPerspectiveCamera2 = _interopRequireDefault(_THREEPerspectiveCamera);
 
-	var _THREEOrthographicCamera = __webpack_require__(103);
+	var _THREEOrthographicCamera = __webpack_require__(108);
 
 	var _THREEOrthographicCamera2 = _interopRequireDefault(_THREEOrthographicCamera);
 
-	var _THREEAxisHelper = __webpack_require__(104);
+	var _THREEAxisHelper = __webpack_require__(109);
 
 	var _THREEAxisHelper2 = _interopRequireDefault(_THREEAxisHelper);
 
-	var _THREELine = __webpack_require__(105);
+	var _THREELine = __webpack_require__(110);
 
 	var _THREELine2 = _interopRequireDefault(_THREELine);
 
-	var _THREELineSegments = __webpack_require__(106);
+	var _THREELineSegments = __webpack_require__(111);
 
 	var _THREELineSegments2 = _interopRequireDefault(_THREELineSegments);
 
-	var _THREEPointCloud = __webpack_require__(107);
+	var _THREEPointCloud = __webpack_require__(112);
 
 	var _THREEPointCloud2 = _interopRequireDefault(_THREEPointCloud);
 
-	var _THREEObject3D = __webpack_require__(108);
+	var _THREEObject3D = __webpack_require__(113);
 
 	var _THREEObject3D2 = _interopRequireDefault(_THREEObject3D);
 
-	var _THREEMesh = __webpack_require__(109);
+	var _THREEMesh = __webpack_require__(114);
 
 	var _THREEMesh2 = _interopRequireDefault(_THREEMesh);
 
-	var _THREESkinnedMesh = __webpack_require__(110);
+	var _THREESkinnedMesh = __webpack_require__(115);
 
 	var _THREESkinnedMesh2 = _interopRequireDefault(_THREESkinnedMesh);
 
-	var _THREESprite = __webpack_require__(111);
+	var _THREESprite = __webpack_require__(116);
 
 	var _THREESprite2 = _interopRequireDefault(_THREESprite);
 
-	var _THREEAmbientLight = __webpack_require__(112);
+	var _THREEAmbientLight = __webpack_require__(117);
 
 	var _THREEAmbientLight2 = _interopRequireDefault(_THREEAmbientLight);
 
-	var _THREEPointLight = __webpack_require__(114);
+	var _THREEPointLight = __webpack_require__(119);
 
 	var _THREEPointLight2 = _interopRequireDefault(_THREEPointLight);
 
-	var _THREEAreaLight = __webpack_require__(115);
+	var _THREEAreaLight = __webpack_require__(120);
 
 	var _THREEAreaLight2 = _interopRequireDefault(_THREEAreaLight);
 
-	var _THREEDirectionalLight = __webpack_require__(116);
+	var _THREEDirectionalLight = __webpack_require__(121);
 
 	var _THREEDirectionalLight2 = _interopRequireDefault(_THREEDirectionalLight);
 
-	var _THREEHemisphereLight = __webpack_require__(118);
+	var _THREEHemisphereLight = __webpack_require__(123);
 
 	var _THREEHemisphereLight2 = _interopRequireDefault(_THREEHemisphereLight);
 
-	var _THREESpotLight = __webpack_require__(119);
+	var _THREESpotLight = __webpack_require__(124);
 
 	var _THREESpotLight2 = _interopRequireDefault(_THREESpotLight);
 
-	var _THREEDecoratorHelper = __webpack_require__(120);
+	var _THREEDecoratorHelper = __webpack_require__(125);
 
 	var _THREEDecoratorHelper2 = _interopRequireDefault(_THREEDecoratorHelper);
 
-	var _Constants = __webpack_require__(123);
+	var _Constants = __webpack_require__(128);
 
 	var _Constants2 = _interopRequireDefault(_Constants);
 
@@ -1054,7 +1054,11 @@ module.exports =
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _react = __webpack_require__(85);
+	var _extends2 = __webpack_require__(85);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _react = __webpack_require__(90);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -1062,7 +1066,7 @@ module.exports =
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _ReactUpdates = __webpack_require__(86);
+	var _ReactUpdates = __webpack_require__(91);
 
 	var _ReactUpdates2 = _interopRequireDefault(_ReactUpdates);
 
@@ -1070,15 +1074,15 @@ module.exports =
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _THREEContainerMixin = __webpack_require__(88);
+	var _THREEContainerMixin = __webpack_require__(93);
 
 	var _THREEContainerMixin2 = _interopRequireDefault(_THREEContainerMixin);
 
-	var _EventPluginHub = __webpack_require__(91);
+	var _EventPluginHub = __webpack_require__(96);
 
 	var _EventPluginHub2 = _interopRequireDefault(_EventPluginHub);
 
@@ -1109,7 +1113,8 @@ module.exports =
 	      pixelRatio: 1,
 	      transparent: false,
 	      disableHotLoader: false,
-	      style: {}
+	      style: {},
+	      rendererProps: {}
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
@@ -1124,11 +1129,11 @@ module.exports =
 	    this._rootNodeID = "";
 
 	    this._customRender = this.props.customRender;
-	    this._THREErenderer = new _three2.default.WebGLRenderer({
+	    this._THREErenderer = new _three2.default.WebGLRenderer((0, _extends3.default)({
 	      alpha: this.props.transparent,
 	      canvas: renderelement,
 	      antialias: props.antialias === undefined ? true : props.antialias
-	    });
+	    }, this.props.rendererProps));
 	    this._THREErenderer.shadowMap.enabled = props.shadowMapEnabled !== undefined ? props.shadowMapEnabled : false;
 	    if (props.shadowMapType !== undefined) {
 	      this._THREErenderer.shadowMap.type = props.shadowMapType;
@@ -2271,24 +2276,112 @@ module.exports =
 
 /***/ },
 /* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _assign = __webpack_require__(86);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _assign2.default || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];
+
+	    for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }
+
+	  return target;
+	};
+
+/***/ },
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(87), __esModule: true };
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(88);
+	module.exports = __webpack_require__(16).Object.assign;
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(15);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(89)});
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(39)
+	  , gOPS     = __webpack_require__(76)
+	  , pIE      = __webpack_require__(77)
+	  , toObject = __webpack_require__(6)
+	  , IObject  = __webpack_require__(42)
+	  , $assign  = Object.assign;
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(25)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
+/* 90 */
 /***/ function(module, exports) {
 
 	module.exports = require("react");
 
 /***/ },
-/* 86 */
+/* 91 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/lib/ReactUpdates");
 
 /***/ },
-/* 87 */
+/* 92 */
 /***/ function(module, exports) {
 
 	module.exports = require("three");
 
 /***/ },
-/* 88 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2297,11 +2390,11 @@ module.exports =
 	  value: true
 	});
 
-	var _ReactMultiChild = __webpack_require__(89);
+	var _ReactMultiChild = __webpack_require__(94);
 
 	var _ReactMultiChild2 = _interopRequireDefault(_ReactMultiChild);
 
-	var _objectAssign = __webpack_require__(90);
+	var _objectAssign = __webpack_require__(95);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -2380,13 +2473,13 @@ module.exports =
 	exports.default = THREEContainerMixin;
 
 /***/ },
-/* 89 */
+/* 94 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/lib/ReactMultiChild");
 
 /***/ },
-/* 90 */
+/* 95 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2475,36 +2568,36 @@ module.exports =
 
 
 /***/ },
-/* 91 */
+/* 96 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/lib/EventPluginHub");
 
 /***/ },
-/* 92 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _ReactMount = __webpack_require__(93);
+	var _ReactMount = __webpack_require__(98);
 
 	var _ReactMount2 = _interopRequireDefault(_ReactMount);
 
-	var _ReactBrowserEventEmitter = __webpack_require__(94);
+	var _ReactBrowserEventEmitter = __webpack_require__(99);
 
-	var _EventPluginHub = __webpack_require__(91);
+	var _EventPluginHub = __webpack_require__(96);
 
 	var _EventPluginHub2 = _interopRequireDefault(_EventPluginHub);
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
 	var _warning = __webpack_require__(32);
 
@@ -2652,19 +2745,19 @@ module.exports =
 	module.exports = THREEScene;
 
 /***/ },
-/* 93 */
+/* 98 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/lib/ReactMount");
 
 /***/ },
-/* 94 */
+/* 99 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/lib/ReactBrowserEventEmitter");
 
 /***/ },
-/* 95 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2673,15 +2766,15 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _objectAssign = __webpack_require__(90);
+	var _objectAssign = __webpack_require__(95);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _THREEContainerMixin = __webpack_require__(88);
+	var _THREEContainerMixin = __webpack_require__(93);
 
 	var _THREEContainerMixin2 = _interopRequireDefault(_THREEContainerMixin);
 
@@ -2847,7 +2940,7 @@ module.exports =
 	exports.default = THREEObject3DMixin;
 
 /***/ },
-/* 96 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2860,18 +2953,18 @@ module.exports =
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _getIterator2 = __webpack_require__(97);
+	var _getIterator2 = __webpack_require__(102);
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
 	exports.createTHREEComponent = createTHREEComponent;
 	exports.setNewLightColor = setNewLightColor;
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _objectAssign = __webpack_require__(90);
+	var _objectAssign = __webpack_require__(95);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -2942,25 +3035,25 @@ module.exports =
 	}
 
 /***/ },
-/* 97 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(98), __esModule: true };
+	module.exports = { "default": __webpack_require__(103), __esModule: true };
 
 /***/ },
-/* 98 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(64);
 	__webpack_require__(52);
-	module.exports = __webpack_require__(99);
+	module.exports = __webpack_require__(104);
 
 /***/ },
-/* 99 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(21)
-	  , get      = __webpack_require__(100);
+	  , get      = __webpack_require__(105);
 	module.exports = __webpack_require__(16).getIterator = function(it){
 	  var iterFn = get(it);
 	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
@@ -2968,10 +3061,10 @@ module.exports =
 	};
 
 /***/ },
-/* 100 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(101)
+	var classof   = __webpack_require__(106)
 	  , ITERATOR  = __webpack_require__(63)('iterator')
 	  , Iterators = __webpack_require__(57);
 	module.exports = __webpack_require__(16).getIteratorMethod = function(it){
@@ -2981,7 +3074,7 @@ module.exports =
 	};
 
 /***/ },
-/* 101 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -3009,7 +3102,7 @@ module.exports =
 	};
 
 /***/ },
-/* 102 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3018,13 +3111,13 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3045,7 +3138,7 @@ module.exports =
 	exports.default = THREEPerspectiveCamera;
 
 /***/ },
-/* 103 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3054,13 +3147,13 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3081,7 +3174,7 @@ module.exports =
 	exports.default = THREEOrthographicCamera;
 
 /***/ },
-/* 104 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3090,13 +3183,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3109,7 +3202,7 @@ module.exports =
 	});
 
 /***/ },
-/* 105 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3118,13 +3211,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3143,7 +3236,7 @@ module.exports =
 	exports.default = THREELine;
 
 /***/ },
-/* 106 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3152,13 +3245,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3177,7 +3270,7 @@ module.exports =
 	exports.default = THREELineSegments;
 
 /***/ },
-/* 107 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3186,13 +3279,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3211,7 +3304,7 @@ module.exports =
 	exports.default = THREEPointCloud;
 
 /***/ },
-/* 108 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3220,9 +3313,9 @@ module.exports =
 	    value: true
 	});
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3233,7 +3326,7 @@ module.exports =
 	exports.default = THREEObject3D;
 
 /***/ },
-/* 109 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3242,13 +3335,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3274,7 +3367,7 @@ module.exports =
 	exports.default = THREEMesh;
 
 /***/ },
-/* 110 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3283,13 +3376,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3314,7 +3407,7 @@ module.exports =
 	exports.default = THREESkinnedMesh;
 
 /***/ },
-/* 111 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3323,13 +3416,13 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
@@ -3348,7 +3441,7 @@ module.exports =
 	exports.default = THREESprite;
 
 /***/ },
-/* 112 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3357,17 +3450,17 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _LightObjectMixin = __webpack_require__(113);
+	var _LightObjectMixin = __webpack_require__(118);
 
 	var _LightObjectMixin2 = _interopRequireDefault(_LightObjectMixin);
 
@@ -3386,7 +3479,7 @@ module.exports =
 	exports.default = THREEAmbientLight;
 
 /***/ },
-/* 113 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3395,7 +3488,7 @@ module.exports =
 	    value: true
 	});
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
 	var LightObjectMixin = {
 	    applySpecificTHREEProps: function applySpecificTHREEProps(oldProps, newProps) {
@@ -3409,7 +3502,7 @@ module.exports =
 	exports.default = LightObjectMixin;
 
 /***/ },
-/* 114 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3418,17 +3511,17 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _LightObjectMixin = __webpack_require__(113);
+	var _LightObjectMixin = __webpack_require__(118);
 
 	var _LightObjectMixin2 = _interopRequireDefault(_LightObjectMixin);
 
@@ -3449,7 +3542,7 @@ module.exports =
 	exports.default = THREEPointLight;
 
 /***/ },
-/* 115 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3458,17 +3551,17 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _LightObjectMixin = __webpack_require__(113);
+	var _LightObjectMixin = __webpack_require__(118);
 
 	var _LightObjectMixin2 = _interopRequireDefault(_LightObjectMixin);
 
@@ -3489,7 +3582,7 @@ module.exports =
 	exports.default = THREEAreaLight;
 
 /***/ },
-/* 116 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3498,23 +3591,23 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _LightObjectMixin = __webpack_require__(113);
+	var _LightObjectMixin = __webpack_require__(118);
 
 	var _LightObjectMixin2 = _interopRequireDefault(_LightObjectMixin);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CommonShadowmapProps = __webpack_require__(117);
+	var CommonShadowmapProps = __webpack_require__(122);
 
 	var THREEDirectionalLight = (0, _Utils.createTHREEComponent)('DirectionalLight', _THREEObject3DMixin2.default, {
 	  createTHREEObject: function createTHREEObject() {
@@ -3533,7 +3626,7 @@ module.exports =
 	exports.default = THREEDirectionalLight;
 
 /***/ },
-/* 117 */
+/* 122 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3541,7 +3634,7 @@ module.exports =
 	module.exports = ['shadowCameraNear', 'shadowCameraFar', 'shadowCameraVisible', 'shadowBias', 'shadowDarkness', 'shadowMapWidth', 'shadowMapHeight', 'shadowMap', 'shadowMapSize', 'shadowCamera', 'shadowMatrix'];
 
 /***/ },
-/* 118 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3550,17 +3643,17 @@ module.exports =
 	  value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _LightObjectMixin = __webpack_require__(113);
+	var _LightObjectMixin = __webpack_require__(118);
 
 	var _LightObjectMixin2 = _interopRequireDefault(_LightObjectMixin);
 
@@ -3586,17 +3679,17 @@ module.exports =
 	exports.default = THREEHemisphereLight;
 
 /***/ },
-/* 119 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var THREE = __webpack_require__(87);
-	var createTHREEComponent = __webpack_require__(96).createTHREEComponent;
-	var THREEObject3DMixin = __webpack_require__(95);
-	var LightObjectMixin = __webpack_require__(113);
+	var THREE = __webpack_require__(92);
+	var createTHREEComponent = __webpack_require__(101).createTHREEComponent;
+	var THREEObject3DMixin = __webpack_require__(100);
+	var LightObjectMixin = __webpack_require__(118);
 
-	var CommonShadowmapProps = __webpack_require__(117);
+	var CommonShadowmapProps = __webpack_require__(122);
 
 	var THREESpotLight = createTHREEComponent('SpotLight', THREEObject3DMixin, {
 	    createTHREEObject: function createTHREEObject() {
@@ -3614,7 +3707,7 @@ module.exports =
 	module.exports = THREESpotLight;
 
 /***/ },
-/* 120 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3623,21 +3716,21 @@ module.exports =
 	  value: true
 	});
 
-	var _getIterator2 = __webpack_require__(97);
+	var _getIterator2 = __webpack_require__(102);
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
-	var _Utils = __webpack_require__(96);
+	var _Utils = __webpack_require__(101);
 
-	var _THREEObject3DMixin = __webpack_require__(95);
+	var _THREEObject3DMixin = __webpack_require__(100);
 
 	var _THREEObject3DMixin2 = _interopRequireDefault(_THREEObject3DMixin);
 
-	var _lodash = __webpack_require__(121);
+	var _lodash = __webpack_require__(126);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -3775,7 +3868,7 @@ module.exports =
 	});
 
 /***/ },
-/* 121 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -18852,10 +18945,10 @@ module.exports =
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(122)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(127)(module), (function() { return this; }())))
 
 /***/ },
-/* 122 */
+/* 127 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -18871,7 +18964,7 @@ module.exports =
 
 
 /***/ },
-/* 123 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18880,7 +18973,7 @@ module.exports =
 	    value: true
 	});
 
-	var _three = __webpack_require__(87);
+	var _three = __webpack_require__(92);
 
 	var _three2 = _interopRequireDefault(_three);
 
